@@ -1,0 +1,60 @@
+
+Instruktioner
+Demo/Exempel-applikationen går att hitta på GitHub.
+1.	Skapa ett nytt repository under ert egna konto
+2.	Klona demo-applikationen:
+–	(HTTPS) git clone [REDACTED] (Vanligast med Windows)
+–	(SSH) git clone git@github.com:[REDACTED] (Vanligast med macOS/Linux)
+3.	Ställ i er i katalogen för det som ni har klonat: cd nackademin-helloworld
+4.	Uppdatera remote:
+–	(HTTPS) git set-url origin https://github.com/<användare>/[REDACTED]
+–	(SSH) git clone git@github.com:<användare>/[REDACTED]
+5.	Ladda upp till er egna remote: git push
+Nu kan ni börja arbeta och ladda upp era förändringar mot ert egna repo.
+Instruktioner på att konfigurera Git lokalt.
+ 
+Kriterier
+Git
+	Skapa ett nytt Git repo i GitHub
+	Klonat exempel-applikationen och använda det som bas för sitt egna repo
+	Skapat en ny branch och gjort en förändring (se nedan under Tips för exempel)
+	Push på förändring med branch till repo
+	Merge på den nya branchen in i main
+Extra
+	Merge in i main sker via en Pull request
+	Commit-meddelande vid förändringar är välformulerade (för tips på välformulerade commits se nedan)
+	Pull request-meddelande är välformulerat
+För tips om välformulerade commit- och pull request-meddelande se nedan under Tips
+CI/CD
+	Ett GitHub Action workflow som testar applikationen på merge med main (CI)
+	Ett GitHub Action workflow som skapar en Docker (container) image och laddar upp den i GitHub Packages (Container registry) på merge med main (CD)
+Dessa två moment kan ingå i samma workflow-fil.
+Extra
+	Workflow för test av applikation körs när en pull request mot main utförs (CI)
+	Workflow för test av applikation körs när en push sker mot en branch med prefixet dev (CI)
+	Workflow för Docker Image och GitHub packages sker bara när en särskild tag används (t.ex en tag med en ny version)
+	Övrig kreativitet i workflow är meriterande
+För vägledning om hur dessa mer avancerade triggers kan göra, se dokumentation för GitHub Actions och Triggers
+
+
+//Det som ska lämnas in i studentportalen är länken till Githubrepositoriet. 
+Som t.ex en .txt fil
+
+ 
+Tips
+Uppdatera remote
+Viktigt är att eleven efter att ha klonat applikationen, uppdaterar “remote” till det repository eleven skapat själv:
+git remote set-url origin <nytt-repository>
+Kodförändring
+Exempel på förändring i applikationen: 1. Öppna filen server/handlers.go och ändra strängen "Hello, world!" på rad 9 till något annat. Spara. 2. Öppna filen server/handlers_test.go och gör motsvarande förändring på rad 11. Spara
+Commit- och Pull request-meddelande
+Ett välformulerat commit-meddelande beskriver kort vad förändringen gör (och gärna då vad som händer om man använder sig av den commit:en).
+Om t.ex en ny endpoint för en HTTP server lagts till, så är ett bra commit-meddelande: Add new endpoint for the HTTP server.
+Vad då avser Pull request-meddelande så skulle det vara:
+This pull requests adds a new endpoint for the HTTP server.
+
+<Ytterligare information vad förändringen medför>
+För mer information om commit- och pull request-meddelande se följande länkar: - How to Write a Git Commit Message - Conventional commits
+Build och test
+Applikationen är skriven i Go och README.md har instruktioner på hur saker ska göras med i avseende med kompilering och tester. Ytterligare information om hur detta kan göras i Workflow finns på GitHub Actions dokumentation (under avsnittet Build and test i menyn till höger)
+För information kring att bygga en Docker image och ladda upp den till GitHub packages se Publish Docker images
