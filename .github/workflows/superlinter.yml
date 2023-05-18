@@ -1,8 +1,10 @@
-
 ---
 name: Super-Linter
 
-on: push
+on:
+  push:
+    branches:
+      - 'dev*'
 
 jobs:
   super-lint:
@@ -18,4 +20,3 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: true
-          VALIDATE_HTML: true
