@@ -1,29 +1,29 @@
 
 Instruktioner
 Demo/Exempel-applikationen går att hitta på GitHub.
-1.	Skapa ett nytt repository under ert egna konto
-2.	Klona demo-applikationen:
-–	(HTTPS) git clone [REDACTED] (Vanligast med Windows)
+1.	Skapa ett nytt repository under ert egna konto --> CHECK SANDBOX TEST
+2.	Klona demo-applikationen: 
+–	(HTTPS) git clone [REDACTED] (Vanligast med Windows) --> CHECK SANDBOX TEST
 –	(SSH) git clone git@github.com:[REDACTED] (Vanligast med macOS/Linux)
-3.	Ställ i er i katalogen för det som ni har klonat: cd nackademin-helloworld
+3.	Ställ i er i katalogen för det som ni har klonat: cd nackademin-helloworld --> CHECK SANDBOX TEST
 4.	Uppdatera remote:
-–	(HTTPS) git set-url origin https://github.com/<användare>/[REDACTED]
+–	(HTTPS) git set-url origin https://github.com/<användare>/[REDACTED] --> CHECK SANDBOX TEST
 –	(SSH) git clone git@github.com:<användare>/[REDACTED]
-5.	Ladda upp till er egna remote: git push
+5.	Ladda upp till er egna remote: git push --> CHECK SANDBOX TEST
 Nu kan ni börja arbeta och ladda upp era förändringar mot ert egna repo.
 Instruktioner på att konfigurera Git lokalt.
  
 Kriterier
 Git
-	Skapa ett nytt Git repo i GitHub
-	Klonat exempel-applikationen och använda det som bas för sitt egna repo
-	Skapat en ny branch och gjort en förändring (se nedan under Tips för exempel)
-	Push på förändring med branch till repo
-	Merge på den nya branchen in i main
+	Skapa ett nytt Git repo i GitHub --> CHECK SANDBOX TEST
+	Klonat exempel-applikationen och använda det som bas för sitt egna repo --> CHECK SANDBOX TEST
+	Skapat en ny branch och gjort en förändring (se nedan under Tips för exempel) --> CHECK SANDBOX TEST
+	Push på förändring med branch till repo --> CHECK SANDBOX TEST
+	Merge på den nya branchen in i main --> CHECK SANDBOX TEST
 Extra
-	Merge in i main sker via en Pull request
-	Commit-meddelande vid förändringar är välformulerade (för tips på välformulerade commits se nedan)
-	Pull request-meddelande är välformulerat
+	Merge in i main sker via en Pull request - CHECK SANDBOX TEST VIAG ITHUB
+	Commit-meddelande vid förändringar är välformulerade (för tips på välformulerade commits se nedan) --> CHECK, READ AND WILL INCORPORATE -> https://gist.github.com/rishavpandey43/84665ffe3cea76400d8e5a1ad7133a79 
+	Pull request-meddelande är välformulerat --> CHECK, READ AND WILL INCORPORATE --> https://gist.github.com/rishavpandey43/84665ffe3cea76400d8e5a1ad7133a79
 För tips om välformulerade commit- och pull request-meddelande se nedan under Tips
 CI/CD
 	Ett GitHub Action workflow som testar applikationen på merge med main (CI)
