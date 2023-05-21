@@ -1,0 +1,14 @@
+name: test_pullrequest_main
+
+on:
+    pull_request:
+        branches:
+            - main
+
+ jobs:
+    hello:
+        runs-on: ubuntu-latest           
+
+        steps:
+            - name: test pull requset on main
+            run: echo "test pull request on main"
