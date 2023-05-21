@@ -1,0 +1,39 @@
+---
+    name: mainmerge-check
+
+
+    on:
+      pull_request:
+        branches:
+          - main
+        types:
+          - closed
+    
+    jobs:
+      check:
+        runs-on: ubuntu-latest
+    
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v2
+            with:
+              ref: main
+    
+          - name: Get before commit SHA
+            id: before-commit
+            run: |
+              echo "::set-output name=commit::$(curl -s -H \"Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}\" \
+              \"https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.number }}\" | jq -r '.base.sha')"
+    
+          - name: Get changed files
+            id: changed-files
+            run: |
+              echo "files=$(git diff --name-only ${{ steps.before-commit.outputs.commit }}...${{ github.sha }})" >> $GITHUB_ENV
+    
+          - name: Run integrity check
+            run: |
+              for file in $files; do
+                echo "Checking integrity of $file"
+                sha256sum "$file"
+              done
+    
