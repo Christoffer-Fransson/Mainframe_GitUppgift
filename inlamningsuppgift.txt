@@ -27,7 +27,7 @@ Extra
 För tips om välformulerade commit- och pull request-meddelande se nedan under Tips
 CI/CD
 	CHECK - Ett GitHub Action workflow som testar applikationen på merge med main (CI) - CHECK -> test_main.merge.yml
-	--> Ett GitHub Action workflow som skapar en Docker (container) image och laddar upp den i GitHub Packages (Container registry) på merge med main (CD)
+	CHECK - Ett GitHub Action workflow som skapar en Docker (container) image och laddar upp den i GitHub Packages (Container registry) på merge med main (CD) - CHECK -> docker_on_main_merge.yml
 Dessa två moment kan ingå i samma workflow-fil.
 Extra
 	CHECK - Workflow för test av applikation körs när en pull request mot main utförs (CI) --> CHECK - Added test to test_pullrequest_main.yml
