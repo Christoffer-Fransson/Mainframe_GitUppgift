@@ -1,5 +1,5 @@
 ---
-name: devbranchpush-super-linter
+name: test_devbranch-push-super-linter
 
 on:
   push:

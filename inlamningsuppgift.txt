@@ -26,7 +26,7 @@ Extra
 	CHECK - Pull request-meddelande är välformulerat --> CHECK, READ AND WILL INCORPORATE --> https://gist.github.com/rishavpandey43/84665ffe3cea76400d8e5a1ad7133a79
 För tips om välformulerade commit- och pull request-meddelande se nedan under Tips
 CI/CD
-	--> Ett GitHub Action workflow som testar applikationen på merge med main (CI)
+	CHECK - Ett GitHub Action workflow som testar applikationen på merge med main (CI) - CHECK -> test_main.merge.yml
 	--> Ett GitHub Action workflow som skapar en Docker (container) image och laddar upp den i GitHub Packages (Container registry) på merge med main (CD)
 Dessa två moment kan ingå i samma workflow-fil.
 Extra
