@@ -30,7 +30,7 @@ CI/CD
 	--> Ett GitHub Action workflow som skapar en Docker (container) image och laddar upp den i GitHub Packages (Container registry) på merge med main (CD)
 Dessa två moment kan ingå i samma workflow-fil.
 Extra
-	--> Workflow för test av applikation körs när en pull request mot main utförs (CI)
+	CHECK - Workflow för test av applikation körs när en pull request mot main utförs (CI) --> CHECK - Added test to test_pullrequest_main.yml
 	CHECK - Workflow för test av applikation körs när en push sker mot en branch med prefixet dev (CI) --> CHECK - Added superlinter feature that targets pushed branches with prefix dev.
 	--> Workflow för Docker Image och GitHub packages sker bara när en särskild tag används (t.ex en tag med en ny version)
 	--> Övrig kreativitet i workflow är meriterande
