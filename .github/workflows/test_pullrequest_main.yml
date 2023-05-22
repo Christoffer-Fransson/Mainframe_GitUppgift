@@ -1,27 +1,25 @@
 ---
-name: test_pullrequest_main
-
-on:
-  pull_request:
-    branches: [main]
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+  name: test_pullrequest_main
+  
+  on:
+    pull_request:
+      branches: 
+        - main
+  
+  jobs:
+    build-test-publish:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v3
+          
+        - name: Set up Go
+          uses: actions/setup-go@v4
+          with:
+            go-version: '1.x'
+      
+        - name: Check endpoint
+          run: go build -o endpoint -o build/endpoint main.go
+      
+        - name: Test application
+          run: go test ./...
