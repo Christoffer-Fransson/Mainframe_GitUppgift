@@ -8,3 +8,4 @@ v.0.1.6 testing tos see if test_main_merge.yml workflow does run when a push fro
 v.0.1.7 testing a straight local repo main to remote repo main push expecting workflow to create a docker file.
 v.0.1.8 testing a straight local repo main to remote repo main push expecting workflow to create a docker file after codebase change in docker_on_main_merge.yml
 v.0.1.9 testing if docker creation and publish initiates on a new tag version (docker_on_main_tag.yml)
+v.0.1.10 testing if docker creation and publish initiates on a new tag version (docker_on_main_tag.yml) expecting workflow not to run since no updated tag.
