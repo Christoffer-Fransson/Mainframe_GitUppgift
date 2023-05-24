@@ -1,4 +1,7 @@
 
+ CHECK - ".. en eller flera förändringar av koden i applikationen .." --> CHECK - uppdated "hello world" to hello devops world" in handlers_test.go and handlers.go.
+
+
 Instruktioner
 Demo/Exempel-applikationen går att hitta på GitHub.
 1.	CHECK - Skapa ett nytt repository under ert egna konto --> CHECK SANDBOX TEST
@@ -32,8 +35,8 @@ Dessa två moment kan ingå i samma workflow-fil.
 Extra
 	CHECK - Workflow för test av applikation körs när en pull request mot main utförs (CI) --> CHECK - Added test to test_pullrequest_main.yml
 	CHECK - Workflow för test av applikation körs när en push sker mot en branch med prefixet dev (CI) --> CHECK - Added superlinter feature that targets pushed branches with prefix dev.
-	--> Workflow för Docker Image och GitHub packages sker bara när en särskild tag används (t.ex en tag med en ny version)
-	--> Övrig kreativitet i workflow är meriterande
+	CHECK - Workflow för Docker Image och GitHub packages sker bara när en särskild tag används (t.ex en tag med en ny version) --> CHECK - docker_on_main_merge.yml solves this.
+			Övrig kreativitet i workflow är meriterande
 För vägledning om hur dessa mer avancerade triggers kan göra, se dokumentation för GitHub Actions och Triggers
 
 
